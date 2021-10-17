@@ -14,11 +14,11 @@ const Header = () => {
                 <NavLink to="/shop">Shop</NavLink>
                 <NavLink to="/review">Order Review</NavLink>
                 <NavLink to="/inventory">Manage Inventory</NavLink>
-                {user.email && <span style={{ color: "white" }}>Hello {user.displayName}</span>}
+
                 {user.email ? <NavLink to="/login" onClick={logOut}>Logout</NavLink> :
                     <NavLink to="/login">Login</NavLink>
                 }
-                <NavLink to="/register">Register</NavLink>
+                {user.email && <span style={{ color: "white" }}>Hello {user.displayName}</span>}
             </nav>
         </div>
     );
